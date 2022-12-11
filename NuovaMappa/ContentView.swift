@@ -20,15 +20,15 @@ enum MapDetails {
 let MapLocations = [
     MapLocation(name: "Farework", latitude: 40.85431635643521, longitude: 14.25121566599237, fontana: true, point: false, recycle: false, address: "CVico I Gagliardi, 6, 80137 Napoli NA", description: "A coworking space near the National Archaeological Museum of Naples.", imageName: "Fareworkpic" ),
         MapLocation(name: "Rework", latitude: 40.85709466786785, longitude: 14.282754853822746, fontana: false, point: false, recycle: true, address: "Viale della Costituzione, 80143 Napoli NA", description: "A coworking space in the center of Naples.", imageName: "Reworkpic"),
-    MapLocation(name: "Drinking Fountain", latitude: 40.826329, longitude: 14.205032, fontana: true, point: false, recycle: false, address: "Piazza Italia, 80125 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "fountain" ),
-    MapLocation(name: "Drinking Fountain", latitude: 40.8321628, longitude: 14.2407789, fontana: true, point: false, recycle: false, address: "Villa Comunale, 80122 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "fountain" ),
+    MapLocation(name: "Biblioteca Nazionale di Napoli", latitude:  40.847181, longitude: 14.256984, fontana: true, point: false, recycle: false, address: "Piazza Italia, 80125 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "fountain" ),
+    MapLocation(name: "Biblioteca Vittorio Emanuele", latitude: 40.836848, longitude: 14.250992, fontana: false, point: false, recycle: true, address: "Piazza del Plebiscito, 1, 80132 Napoli NA", description: "In this location you can study or work for free.", imageName: "BiblioVittorio" ),
 ]
 
 let MapLocationsClass = [
     MaplocClass(name: "Farework", latitude: 40.85431635643521, longitude: 14.25121566599237, fontana: true, point: false, recycle: false, address: "CVico I Gagliardi, 6, 80137 Napoli NA", description: "A coworking space near the National Archaeological Museum of Naples.", imageName: "Fareworkpic" ),
         MaplocClass(name: "Rework", latitude: 40.85709466786785, longitude: 14.282754853822746, fontana: false, point: false, recycle: true, address: "Viale della Costituzione, 80143 Napoli NA", description: "A coworking space in the center of Naples.", imageName: "Reworkpic"),
-    MaplocClass(name: "Drinking Fountain", latitude: 40.826329, longitude: 14.205032, fontana: true, point: false, recycle: false, address: "Piazza Italia, 80125 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "fountain" ),
-    MaplocClass(name: "Drinking Fountain", latitude: 40.8321628, longitude: 14.2407789, fontana: true, point: false, recycle: false, address: "Villa Comunale, 80122 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "fountain" ),
+    MaplocClass(name: "Biblioteca Universitaria", latitude: 40.847181, longitude: 14.256984, fontana: true, point: false, recycle: false, address: "Via Giovanni Paladino, 39, 80134 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "Bun" ),
+    MaplocClass(name: "Biblioteca Vittorio Emanuele", latitude: 40.836848, longitude: 14.250992, fontana: false, point: false, recycle: true, address: "Piazza del Plebiscito, 1, 80132 Napoli NA", description: "In this location you can study or work for free.", imageName: "BiblioVittorio" ),
 ]
 
 
@@ -122,7 +122,7 @@ struct ContentView: View {
                             
                         } else if location.recycle{
                             
-                            Image(systemName: "network")
+                            Image(systemName: "books.vertical.circle")
                                 .resizable()
                                 .foregroundColor(.green)
                                 .frame(width: 30, height: 30)
@@ -141,7 +141,7 @@ struct ContentView: View {
                                                 .padding()
                                                 .foregroundColor(.green)
                                         }
-                                        Spacer()
+                                        //Spacer()
                                         
                                         Image(location.imageName)
                                             .resizable()
@@ -151,9 +151,11 @@ struct ContentView: View {
                                             .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color.white, lineWidth: 5))
                                             .foregroundColor(.yellow)
                                         
-                                        Spacer()
+                                        //Spacer()
                                         Text("Address: ")+Text(location.address)
-                                        Spacer()
+                                        
+                                        Text("This library is open daily from 8:00 to 19:00, closed on Sundays").padding()
+                                        //Spacer()
                                         Group {
                                             
                                             Text(location.description)
