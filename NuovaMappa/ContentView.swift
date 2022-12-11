@@ -18,15 +18,15 @@ enum MapDetails {
 
 
 let MapLocations = [
-    MapLocation(name: "Drinking Fountain", latitude: 40.837208, longitude: 14.306232, fontana: true, point: false, recycle: false, address: "Corso N. Protopisani, 70, 80146 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "fountain" ),
-    MapLocation(name: "Waste Depot", latitude: 40.89356260547285, longitude: 14.227367128290185, fontana: false, point: false, recycle: true, address: "Via Campano, 80145 Napoli NA", description: "Waste Recycling Depots are a convenient way to throw away the stuff you don't need anymore.", imageName: "recycle"),
+    MapLocation(name: "Farework", latitude: 40.85431635643521, longitude: 14.25121566599237, fontana: true, point: false, recycle: false, address: "CVico I Gagliardi, 6, 80137 Napoli NA", description: "A coworking space near the National Archaeological Museum of Naples.", imageName: "Fareworkpic" ),
+        MapLocation(name: "Rework", latitude: 40.85709466786785, longitude: 14.282754853822746, fontana: false, point: false, recycle: true, address: "Viale della Costituzione, 80143 Napoli NA", description: "A coworking space in the center of Naples.", imageName: "Reworkpic"),
     MapLocation(name: "Drinking Fountain", latitude: 40.826329, longitude: 14.205032, fontana: true, point: false, recycle: false, address: "Piazza Italia, 80125 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "fountain" ),
     MapLocation(name: "Drinking Fountain", latitude: 40.8321628, longitude: 14.2407789, fontana: true, point: false, recycle: false, address: "Villa Comunale, 80122 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "fountain" ),
 ]
 
 let MapLocationsClass = [
-    MaplocClass(name: "Drinking Fountain", latitude: 40.837208, longitude: 14.306232, fontana: true, point: false, recycle: false, address: "Corso N. Protopisani, 70, 80146 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "fountain" ),
-    MaplocClass(name: "Waste Depot", latitude: 40.89356260547285, longitude: 14.227367128290185, fontana: false, point: false, recycle: true, address: "Via Campano, 80145 Napoli NA", description: "Waste Recycling Depots are a convenient way to throw away the stuff you don't need anymore.", imageName: "recycle"),
+    MaplocClass(name: "Farework", latitude: 40.85431635643521, longitude: 14.25121566599237, fontana: true, point: false, recycle: false, address: "CVico I Gagliardi, 6, 80137 Napoli NA", description: "A coworking space near the National Archaeological Museum of Naples.", imageName: "Fareworkpic" ),
+        MaplocClass(name: "Rework", latitude: 40.85709466786785, longitude: 14.282754853822746, fontana: false, point: false, recycle: true, address: "Viale della Costituzione, 80143 Napoli NA", description: "A coworking space in the center of Naples.", imageName: "Reworkpic"),
     MaplocClass(name: "Drinking Fountain", latitude: 40.826329, longitude: 14.205032, fontana: true, point: false, recycle: false, address: "Piazza Italia, 80125 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "fountain" ),
     MaplocClass(name: "Drinking Fountain", latitude: 40.8321628, longitude: 14.2407789, fontana: true, point: false, recycle: false, address: "Villa Comunale, 80122 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "fountain" ),
 ]
@@ -69,7 +69,7 @@ struct ContentView: View {
                         
                         if location.fontana {
                             
-                            Image(systemName: "drop.circle.fill")
+                            Image(systemName: "network")
                                 .resizable()
                                 .foregroundColor(.green)
                                 .frame(width: 30, height: 30)
@@ -122,7 +122,7 @@ struct ContentView: View {
                             
                         } else if location.recycle{
                             
-                            Image(systemName: "leaf.circle.fill")
+                            Image(systemName: "network")
                                 .resizable()
                                 .foregroundColor(.green)
                                 .frame(width: 30, height: 30)
