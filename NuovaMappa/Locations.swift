@@ -56,7 +56,9 @@ class MaplocClass: Identifiable {
     
     let imageName: String
     
-    init(name: String, latitude: Double, longitude: Double, fontana: Bool, point: Bool, recycle: Bool, address: String, description: String, imageName: String){
+    let orario: String
+    
+    init(name: String, latitude: Double, longitude: Double, fontana: Bool, point: Bool, recycle: Bool, address: String, description: String, imageName: String, orario: String){
         
         self.name = name
         self.latitude = latitude
@@ -67,6 +69,7 @@ class MaplocClass: Identifiable {
         self.address = address
         self.description = description
         self.imageName = imageName
+        self.orario = orario
         
     }
         
