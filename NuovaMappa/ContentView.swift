@@ -17,12 +17,7 @@ enum MapDetails {
 }
 
 
-let MapLocations = [
-    MapLocation(name: "Farework", latitude: 40.85431635643521, longitude: 14.25121566599237, fontana: true, point: false, recycle: false, address: "CVico I Gagliardi, 6, 80137 Napoli NA", description: "A coworking space near the National Archaeological Museum of Naples.", imageName: "Fareworkpic" ),
-        MapLocation(name: "Rework", latitude: 40.85709466786785, longitude: 14.282754853822746, fontana: false, point: false, recycle: true, address: "Viale della Costituzione, 80143 Napoli NA", description: "A coworking space in the center of Naples.", imageName: "Reworkpic"),
-    MapLocation(name: "Biblioteca Nazionale di Napoli", latitude:  40.847181, longitude: 14.256984, fontana: true, point: false, recycle: false, address: "Piazza Italia, 80125 Napoli NA", description: "In this location you can study or work for free.", imageName: "fountain" ),
-    MapLocation(name: "Biblioteca Vittorio Emanuele", latitude: 40.836848, longitude: 14.250992, fontana: false, point: false, recycle: true, address: "Piazza del Plebiscito, 1, 80132 Napoli NA", description: "In this location you can study or work for free.", imageName: "BiblioVittorio" ),
-]
+
 
 let MapLocationsClass = [
     MaplocClass(name: "Farework", latitude: 40.85431635643521, longitude: 14.25121566599237, fontana: true, point: false, recycle: false, address: "CVico I Gagliardi, 6, 80137 Napoli NA", description: "A coworking space near the National Archaeological Museum of Naples.", imageName: "Fareworkpic" ),
@@ -353,8 +348,8 @@ struct ContentView: View {
         
     }
     
-    var prova: [MapLocation]{
-        return MapLocations.filter { $0.fontana == true }
+    var prova: [MaplocClass]{
+        return MapLocationsClass.filter { $0.fontana == true }
     } //select only fountains
     
     
