@@ -253,6 +253,7 @@ struct ContentView: View {
             .ignoresSafeArea()
             .preferredColorScheme(.dark)
             .onAppear{
+             UIApplication.shared.addTapGestureRecognizer()
                 MapModel.checkLocation()
             }// check on appear if location service is active
             .alert(isPresented: $MapModel.pd, content: {
@@ -317,7 +318,7 @@ struct ContentView: View {
                                     .frame(width: 150, height: 50, alignment: .leading)
                                     .onTapGesture {
                                         
-                                        MapModel.region2 = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+                                        MapModel.region2 = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002))
                                         text = ""
                                         
                                     }
@@ -461,5 +462,22 @@ final class Map01Model: NSObject, ObservableObject,
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         //delegate metod
         checkLocationAuthorization()
+    }
+}
+
+extension UIApplication {
+    func addTapGestureRecognizer() {
+        guard let window = windows.first else { return }
+        let tapGesture = UITapGestureRecognizer(target: window, action: #selector(UIView.endEditing))
+        tapGesture.requiresExclusiveTouchType = false
+        tapGesture.cancelsTouchesInView = false
+        tapGesture.delegate = self
+        window.addGestureRecognizer(tapGesture)
+    }
+}
+
+extension UIApplication: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true // set to `false` if you don't want to detect tap during other gestures
     }
 }
