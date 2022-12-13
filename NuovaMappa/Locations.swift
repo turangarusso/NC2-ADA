@@ -44,11 +44,11 @@ class MaplocClass: Identifiable {
     
     let longitude: Double
     
-    let fontana: Bool
+    let biblioteca: Bool
     
     let point: Bool
     
-    let recycle: Bool
+    let aula: Bool
     
     let address: String
     
@@ -58,14 +58,14 @@ class MaplocClass: Identifiable {
     
     let orario: String
     
-    init(name: String, latitude: Double, longitude: Double, fontana: Bool, point: Bool, recycle: Bool, address: String, description: String, imageName: String, orario: String){
+    init(name: String, latitude: Double, longitude: Double, biblioteca: Bool, point: Bool, aula: Bool, address: String, description: String, imageName: String, orario: String){
         
         self.name = name
         self.latitude = latitude
         self.longitude = longitude
-        self.fontana = fontana
+        self.biblioteca = biblioteca
         self.point = point
-        self.recycle = recycle
+        self.aula = aula
         self.address = address
         self.description = description
         self.imageName = imageName
