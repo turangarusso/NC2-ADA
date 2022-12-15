@@ -9,6 +9,9 @@ import SwiftUI
 import MapKit
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.id, order:.reverse)]) var mapAnnotations: FetchedResults<Item>
+    
     
     private enum Field: Int, CaseIterable{
         case search
@@ -20,11 +23,11 @@ struct ContentView: View {
         
     @State var isSearching = false // search bar tap check
     
-    @State private var selectedPlace: MaplocClass? // used for annotations sheet
+    @State var selectedPlace: Item? // used for annotations sheet
     
-    @State var newLatitude = 40.837208 //used fof
+    @State var newLatitude = 40.837208 //used for focus
     
-    @State var newLongitude = 14.306232
+    @State var newLongitude = 14.306232 //used for focus
         
     var body: some View {
         ZStack{
@@ -57,7 +60,7 @@ struct ContentView: View {
                                     Sheet(location: location)
                                 }
                             
-                        } else if location.silentPlace{
+                        } else {
                             
                             Image(systemName: "books.vertical.circle")
                                 .resizable()
@@ -74,15 +77,15 @@ struct ContentView: View {
                                     Sheet(location: location)
                                 }
                         }
-                        Text(location.name)
-                            .frame(width: 70, height: 50)
-                    }
+//                        Text(location.name)
+//                            .frame(width: 70, height: 50)
+                    }//End VStack
                 }
             })
             .ignoresSafeArea()
             .preferredColorScheme(.dark)
             .onAppear{
-                
+                alloca()
                 UIApplication.shared.addTapGestureRecognizer()
                 MapModel.checkLocation()
                 
@@ -104,7 +107,7 @@ struct ContentView: View {
                         .padding(.leading, 24.0)
                         .padding(.horizontal, 24.0)
                     
-                }
+                }//End HStack
                 .padding()
                 .background()
                 .cornerRadius(6)
@@ -116,7 +119,7 @@ struct ContentView: View {
                 
                 .onSubmit{
                     
-                    focusOnPoint()
+//                    focusOnPoint()
                     MapModel.region2 = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: newLatitude, longitude: newLongitude), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
                     
                 }
@@ -161,7 +164,7 @@ struct ContentView: View {
                                 
                             }
                         }.padding()
-                    }.background(Color.white)
+                    }.background(Color.white)//End ScrollView
                         .opacity(30)
                         .cornerRadius(6)
                 }
@@ -183,19 +186,24 @@ struct ContentView: View {
                             .clipShape(Circle())
                             .padding()
                     })
-                }
-            }
+                }//end HStack
+            }//end VStack
         } //end ZStack
-    }
+    }//end Body
     
-    var searchResults: [MaplocClass] {
+    //MARK: -searchResults definition
+    
+    var searchResults: Array<Item>{
         if text.isEmpty {
-            return MapLocationsClass
+            return mapAnnotations.filter {annotation in annotation == annotation}
         } else {
-            return MapLocationsClass.filter { $0.name.contains(text) }
+            return mapAnnotations.filter {annotation in  annotation.name.contains(text) }
         }
     }//search a point
+
     
+    //MARK: -focusOnPoint
+
     func focusOnPoint(){
         if let idx = searchResults.firstIndex(where: { $0.name.contains(text)}) {
             newLongitude = searchResults[idx].longitude
@@ -203,10 +211,69 @@ struct ContentView: View {
         }
     }// center map on the annotation
     
+    //MARK: -focusLocation
+    
     func focusLocation(){
         MapModel.region2 = MKCoordinateRegion(center: CLLocationManager().location?.coordinate ?? MapDetails.startingLocation, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
         
     }// center map on the user location if location service is running
+    
+    func alloca(){
+        
+            
+        let farework = Item(context: moc)
+        farework.name = "Farework"
+        farework.latitude = 40.95431635643521
+        farework.longitude = 14.45121566599237
+        farework.loudPlace = false
+        farework.point = false
+        farework.silentPlace = false
+        farework.address = "CVico I Gagliardi, 6, 80137 Napoli NA"
+        farework.placeDescription = "In this location you can drink potable water for free."
+        farework.imageName = "Fareworkpic"
+        farework.time = "This point is open daily from 8:00 to 19:00, closed on Sundays"
+        
+        let newBook2 = Item(context: moc)
+        newBook2.name = "Rework"
+        newBook2.latitude = 40.85709466786785
+        newBook2.longitude = 14.282754853822746
+        newBook2.loudPlace = true
+        newBook2.point = false
+        newBook2.silentPlace = false
+        newBook2.address = "Viale della Costituzione, 80143 Napoli NA"
+        newBook2.placeDescription = "A coworking space in the center of Naples."
+        newBook2.imageName = "Reworkpic"
+        newBook2.time = "This point is open daily from 8:00 to 19:00, closed on Sundays"
+        
+        let universityLibrary = Item(context: moc)
+        universityLibrary.name = "Biblioteca Universitaria"
+        universityLibrary.latitude = 40.847181
+        universityLibrary.longitude = 14.256984
+        universityLibrary.loudPlace = false
+        universityLibrary.point = false
+        universityLibrary.silentPlace = true
+        universityLibrary.address = "Via Giovanni Paladino, 39, 80134 Napoli NA"
+        universityLibrary.placeDescription = "In this location you can drink potable water for free."
+        universityLibrary.imageName = "Bun"
+        universityLibrary.time = "This point is open daily from 8:00 to 19:00, closed on Sundays"
+        
+        let library = Item(context: moc)
+        library.name = "Vittorio Emanuele"
+        library.latitude = 40.836848
+        library.longitude = 14.250992
+        library.loudPlace = false
+        library.point = false
+        library.silentPlace = true
+        library.address = "Piazza del Plebiscito, 1, 80132 Napoli NA"
+        library.placeDescription = "In this location you can study or work for free."
+        library.imageName = "BiblioVittorio"
+        library.time = "This point is open daily from 8:00 to 19:00, closed on Sundays"
+        
+        if moc.hasChanges{
+            try? moc.save()
+            //dismiss()
+        }
+    }
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

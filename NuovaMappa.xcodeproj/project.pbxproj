@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E5F65D1294B7DF10071FD94 /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F65D0294B7DF10071FD94 /* Sheet.swift */; };
 		9E8B34122948D685003EB112 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B34112948D685003EB112 /* Extensions.swift */; };
-		9E8B34152948D953003EB112 /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B34142948D953003EB112 /* Sheet.swift */; };
 		9E8B34172948DCC5003EB112 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B34162948DCC5003EB112 /* LocationManager.swift */; };
+		9E8B341E294A19C0003EB112 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B341C294A19C0003EB112 /* Model.xcdatamodeld */; };
+		9E8B3421294A1B83003EB112 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B341F294A1B83003EB112 /* Item+CoreDataClass.swift */; };
+		9E8B3422294A1B83003EB112 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B3420294A1B83003EB112 /* Item+CoreDataProperties.swift */; };
+		9E8B3424294A1BD8003EB112 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8B3423294A1BD8003EB112 /* DataController.swift */; };
 		9EAB8F21293FA7A400AEF7E9 /* NuovaMappaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB8F20293FA7A400AEF7E9 /* NuovaMappaApp.swift */; };
 		9EAB8F23293FA7A400AEF7E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB8F22293FA7A400AEF7E9 /* ContentView.swift */; };
 		9EAB8F25293FA7A500AEF7E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB8F24293FA7A500AEF7E9 /* Assets.xcassets */; };
@@ -18,9 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E5F65D0294B7DF10071FD94 /* Sheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
 		9E8B34112948D685003EB112 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		9E8B34142948D953003EB112 /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
 		9E8B34162948DCC5003EB112 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		9E8B341D294A19C0003EB112 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		9E8B341F294A1B83003EB112 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		9E8B3420294A1B83003EB112 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		9E8B3423294A1BD8003EB112 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		9EAB8F1D293FA7A400AEF7E9 /* NuovaMappa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NuovaMappa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAB8F20293FA7A400AEF7E9 /* NuovaMappaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuovaMappaApp.swift; sourceTree = "<group>"; };
 		9EAB8F22293FA7A400AEF7E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,9 +51,13 @@
 		9E8B34132948D758003EB112 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9E8B341F294A1B83003EB112 /* Item+CoreDataClass.swift */,
+				9E8B3420294A1B83003EB112 /* Item+CoreDataProperties.swift */,
 				9EAB8F2E293FA92700AEF7E9 /* Locations.swift */,
 				9E8B34112948D685003EB112 /* Extensions.swift */,
 				9E8B34162948DCC5003EB112 /* LocationManager.swift */,
+				9E8B3423294A1BD8003EB112 /* DataController.swift */,
+				9E8B341C294A19C0003EB112 /* Model.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -71,7 +83,7 @@
 			children = (
 				9EAB8F20293FA7A400AEF7E9 /* NuovaMappaApp.swift */,
 				9EAB8F22293FA7A400AEF7E9 /* ContentView.swift */,
-				9E8B34142948D953003EB112 /* Sheet.swift */,
+				9E5F65D0294B7DF10071FD94 /* Sheet.swift */,
 				9E8B34132948D758003EB112 /* Model */,
 				9EAB8F24293FA7A500AEF7E9 /* Assets.xcassets */,
 				9EAB8F26293FA7A500AEF7E9 /* Preview Content */,
@@ -157,11 +169,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E8B34152948D953003EB112 /* Sheet.swift in Sources */,
 				9E8B34122948D685003EB112 /* Extensions.swift in Sources */,
 				9E8B34172948DCC5003EB112 /* LocationManager.swift in Sources */,
+				9E8B341E294A19C0003EB112 /* Model.xcdatamodeld in Sources */,
 				9EAB8F2F293FA92700AEF7E9 /* Locations.swift in Sources */,
+				9E8B3424294A1BD8003EB112 /* DataController.swift in Sources */,
+				9E5F65D1294B7DF10071FD94 /* Sheet.swift in Sources */,
 				9EAB8F23293FA7A400AEF7E9 /* ContentView.swift in Sources */,
+				9E8B3422294A1B83003EB112 /* Item+CoreDataProperties.swift in Sources */,
+				9E8B3421294A1B83003EB112 /* Item+CoreDataClass.swift in Sources */,
 				9EAB8F21293FA7A400AEF7E9 /* NuovaMappaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +381,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9E8B341C294A19C0003EB112 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9E8B341D294A19C0003EB112 /* Model.xcdatamodel */,
+			);
+			currentVersion = 9E8B341D294A19C0003EB112 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9EAB8F15293FA7A400AEF7E9 /* Project object */;
 }

@@ -9,7 +9,6 @@ import Foundation
 import MapKit
 import SwiftUI
 
-//MARK: -MaplocClass
 
 class MaplocClass: Identifiable {
         
@@ -52,12 +51,6 @@ class MaplocClass: Identifiable {
 }
 
 
-let MapLocationsClass = [
-    MaplocClass(name: "Farework", latitude: 40.85431635643521, longitude: 14.25121566599237, loudPlace: true, point: false, silentPlace: false, address: "CVico I Gagliardi, 6, 80137 Napoli NA", description: "A coworking space near the National Archaeological Museum of Naples.", imageName: "Fareworkpic", time: "This point is open daily from 8:00 to 19:00, closed on Sundays"),
-    MaplocClass(name: "Rework", latitude: 40.85709466786785, longitude: 14.282754853822746, loudPlace: false, point: false, silentPlace: true, address: "Viale della Costituzione, 80143 Napoli NA", description: "A coworking space in the center of Naples.", imageName: "Reworkpic", time: "This point is open daily from 8:00 to 19:00, closed on Sundays"),
-    MaplocClass(name: "Biblioteca Universitaria", latitude: 40.847181, longitude: 14.256984, loudPlace: true, point: false, silentPlace: false, address: "Via Giovanni Paladino, 39, 80134 Napoli NA", description: "In this location you can drink potable water for free.", imageName: "Bun", time: "This library is open daily from 8:00 to 19:00, closed on Sundays" ),
-    MaplocClass(name: "Biblioteca Vittorio Emanuele", latitude: 40.836848, longitude: 14.250992, loudPlace: false, point: false, silentPlace: true, address: "Piazza del Plebiscito, 1, 80132 Napoli NA", description: "In this location you can study or work for free.", imageName: "BiblioVittorio", time: "This library is open daily from 8:00 to 19:00, closed on Sundays" ),
-]
 
 enum MapDetails {
     
