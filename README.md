@@ -24,11 +24,12 @@
 ## Key Features
 
 * Search Bar
-  - Instantly find your points.
-* Localization with MapKit 
+  - Instantly find your point of interest.
+* Apple Map implemented with MapKit 
+* Show current user location
 * Work Offline with CoreData
-* Custom Map Annotation for each point
-* Show important information about each point 
+* Custom Map Annotations for each point of interest
+* Show important information about each point of interest
 
 
 ## How To Use
