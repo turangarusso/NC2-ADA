@@ -77,8 +77,8 @@ struct ContentView: View {
                                     Sheet(location: location)
                                 }
                         }
-//                        Text(location.name)
-//                            .frame(width: 70, height: 50)
+                        Text(location.name)
+                            .frame(width: 70, height: 50)
                     }//End VStack
                 }
             })
@@ -219,7 +219,6 @@ struct ContentView: View {
     }// center map on the user location if location service is running
     
     func alloca(){
-        
             
         let farework = Item(context: moc)
         farework.name = "Farework"
