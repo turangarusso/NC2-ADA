@@ -77,8 +77,8 @@ struct ContentView: View {
                                     Sheet(location: location)
                                 }
                         }
-                        Text(location.name)
-                            .frame(width: 70, height: 50)
+                    //    Text(location.name)
+                    //        .frame(width: 70, height: 50)
                     }//End VStack
                 }
             })
